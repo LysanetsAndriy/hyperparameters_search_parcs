@@ -1,0 +1,612 @@
+================================================================================
+GRID SEARCH RESULTS: MobileNetV2 on CIFAR-10
+================================================================================
+
+Total Configurations: 32
+Successful: 32
+Failed: 0
+
+================================================================================
+BEST CONFIGURATION
+================================================================================
+Config ID: 13
+Learning Rate: 0.001
+Batch Size: 32
+Optimizer: ADAM
+Weight Decay: 0
+Best Validation Accuracy: 55.33%
+Final Training Loss: 0.5207
+Training Time: 64.2s
+Worker ID: 6
+
+================================================================================
+ALL RESULTS (Sorted by Validation Accuracy)
+================================================================================
+
+Rank | Config |   LR    | Batch | Opt  |   WD    | Time(s) |  Loss  | Val Acc
+-----|--------|---------|-------|------|---------|---------|--------|--------
+   1 |     13 |  0.0010 |    32 | adam | 0.00000 |    64.2 | 0.5207 |  55.33%
+   2 |     15 |  0.0010 |    64 | adam | 0.00000 |    58.6 | 0.3182 |  55.33%
+   3 |      5 |  0.0003 |    32 | adam | 0.00000 |    67.4 | 0.3705 |  53.67%
+   4 |      9 |  0.0005 |    32 | adam | 0.00000 |    63.6 | 0.3706 |  53.33%
+   5 |     19 |  0.0030 |    64 | adam | 0.00000 |    58.8 | 0.5279 |  53.33%
+   6 |      7 |  0.0003 |    64 | adam | 0.00000 |    57.6 | 0.1424 |  52.67%
+   7 |     12 |  0.0010 |    32 | sgd  | 0.00000 |    61.5 | 0.7231 |  51.33%
+   8 |     16 |  0.0030 |    32 | sgd  | 0.00000 |    60.4 | 0.5125 |  51.33%
+   9 |      1 |  0.0001 |    32 | adam | 0.00000 |    65.0 | 0.5970 |  51.00%
+  10 |     22 |  0.0050 |    64 | sgd  | 0.00000 |    57.2 | 0.2152 |  51.00%
+  11 |      8 |  0.0005 |    32 | sgd  | 0.00000 |    62.0 | 1.0079 |  50.00%
+  12 |     11 |  0.0005 |    64 | adam | 0.00000 |    57.7 | 0.2387 |  50.00%
+  13 |     14 |  0.0010 |    64 | sgd  | 0.00000 |    55.8 | 0.7980 |  50.00%
+  14 |     18 |  0.0030 |    64 | sgd  | 0.00000 |    55.9 | 0.2125 |  49.67%
+  15 |     20 |  0.0050 |    32 | sgd  | 0.00000 |    60.9 | 0.6004 |  49.67%
+  16 |     26 |  0.0100 |    64 | sgd  | 0.00000 |    56.7 | 0.5114 |  49.00%
+  17 |      3 |  0.0001 |    64 | adam | 0.00000 |    58.9 | 0.5455 |  47.67%
+  18 |     24 |  0.0100 |    32 | sgd  | 0.00000 |    62.2 | 0.7697 |  45.67%
+  19 |     17 |  0.0030 |    32 | adam | 0.00000 |    65.5 | 0.9039 |  44.00%
+  20 |      4 |  0.0003 |    32 | sgd  | 0.00000 |    60.8 | 1.3300 |  43.00%
+  21 |     10 |  0.0005 |    64 | sgd  | 0.00000 |    57.4 | 1.3287 |  42.67%
+  22 |     23 |  0.0050 |    64 | adam | 0.00000 |    57.6 | 1.1432 |  42.67%
+  23 |     30 |  0.0300 |    64 | sgd  | 0.00000 |    55.6 | 0.9538 |  42.67%
+  24 |      6 |  0.0003 |    64 | sgd  | 0.00000 |    56.4 | 1.6660 |  41.33%
+  25 |      0 |  0.0001 |    32 | sgd  | 0.00000 |    60.7 | 1.9359 |  31.33%
+  26 |     27 |  0.0100 |    64 | adam | 0.00000 |    58.0 | 1.4759 |  30.33%
+  27 |     21 |  0.0050 |    32 | adam | 0.00000 |    63.9 | 1.5573 |  29.67%
+  28 |     31 |  0.0300 |    64 | adam | 0.00000 |    59.0 | 1.9541 |  27.33%
+  29 |     29 |  0.0300 |    32 | adam | 0.00000 |    65.9 | 1.8805 |  25.00%
+  30 |     28 |  0.0300 |    32 | sgd  | 0.00000 |    60.9 | 2.0692 |  23.67%
+  31 |     25 |  0.0100 |    32 | adam | 0.00000 |    63.4 | 1.8652 |  23.00%
+  32 |      2 |  0.0001 |    64 | sgd  | 0.00000 |    55.7 | 2.0902 |  20.33%
+
+================================================================================
+DETAILED WORKER LOGS
+================================================================================
+
+[Worker 0] Config 0 started
+[Worker 0] Params: {'config_id': 0, 'learning_rate': 0.0001, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.4210, Val Acc=10.00%
+[Worker 0] Epoch 2/10: Loss=2.3611, Val Acc=14.33%
+[Worker 0] Epoch 3/10: Loss=2.2885, Val Acc=15.67%
+[Worker 0] Epoch 4/10: Loss=2.2219, Val Acc=17.00%
+[Worker 0] Epoch 5/10: Loss=2.1651, Val Acc=19.00%
+[Worker 0] Epoch 6/10: Loss=2.1250, Val Acc=21.67%
+[Worker 0] Epoch 7/10: Loss=2.0836, Val Acc=26.67%
+[Worker 0] Epoch 8/10: Loss=2.0413, Val Acc=24.67%
+[Worker 0] Epoch 9/10: Loss=1.9815, Val Acc=29.00%
+[Worker 0] Epoch 10/10: Loss=1.9359, Val Acc=31.33%
+[Worker 0] Training completed in 60.7s, Best Val Acc: 31.33%
+[Worker 1] Config 1 started
+[Worker 1] Params: {'config_id': 1, 'learning_rate': 0.0001, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.2992, Val Acc=22.00%
+[Worker 1] Epoch 2/10: Loss=1.9390, Val Acc=36.00%
+[Worker 1] Epoch 3/10: Loss=1.6732, Val Acc=42.67%
+[Worker 1] Epoch 4/10: Loss=1.4410, Val Acc=44.00%
+[Worker 1] Epoch 5/10: Loss=1.2412, Val Acc=48.00%
+[Worker 1] Epoch 6/10: Loss=1.0862, Val Acc=45.33%
+[Worker 1] Epoch 7/10: Loss=0.9284, Val Acc=45.33%
+[Worker 1] Epoch 8/10: Loss=0.8068, Val Acc=48.67%
+[Worker 1] Epoch 9/10: Loss=0.6878, Val Acc=50.33%
+[Worker 1] Epoch 10/10: Loss=0.5970, Val Acc=51.00%
+[Worker 1] Training completed in 65.0s, Best Val Acc: 51.00%
+[Worker 2] Config 2 started
+[Worker 2] Params: {'config_id': 2, 'learning_rate': 0.0001, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.4366, Val Acc=5.67%
+[Worker 2] Epoch 2/10: Loss=2.3841, Val Acc=9.00%
+[Worker 2] Epoch 3/10: Loss=2.3543, Val Acc=14.00%
+[Worker 2] Epoch 4/10: Loss=2.3134, Val Acc=16.00%
+[Worker 2] Epoch 5/10: Loss=2.2631, Val Acc=17.00%
+[Worker 2] Epoch 6/10: Loss=2.2223, Val Acc=17.33%
+[Worker 2] Epoch 7/10: Loss=2.1990, Val Acc=16.33%
+[Worker 2] Epoch 8/10: Loss=2.1738, Val Acc=18.00%
+[Worker 2] Epoch 9/10: Loss=2.1139, Val Acc=18.00%
+[Worker 2] Epoch 10/10: Loss=2.0902, Val Acc=20.33%
+[Worker 2] Training completed in 55.7s, Best Val Acc: 20.33%
+[Worker 3] Config 3 started
+[Worker 3] Params: {'config_id': 3, 'learning_rate': 0.0001, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.3413, Val Acc=8.33%
+[Worker 3] Epoch 2/10: Loss=1.9752, Val Acc=22.33%
+[Worker 3] Epoch 3/10: Loss=1.7093, Val Acc=36.67%
+[Worker 3] Epoch 4/10: Loss=1.4844, Val Acc=41.00%
+[Worker 3] Epoch 5/10: Loss=1.2750, Val Acc=43.67%
+[Worker 3] Epoch 6/10: Loss=1.1087, Val Acc=45.33%
+[Worker 3] Epoch 7/10: Loss=0.9448, Val Acc=46.33%
+[Worker 3] Epoch 8/10: Loss=0.7761, Val Acc=47.67%
+[Worker 3] Epoch 9/10: Loss=0.6738, Val Acc=47.67%
+[Worker 3] Epoch 10/10: Loss=0.5455, Val Acc=47.00%
+[Worker 3] Training completed in 58.9s, Best Val Acc: 47.67%
+[Worker 4] Config 4 started
+[Worker 4] Params: {'config_id': 4, 'learning_rate': 0.0003, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 4] Using cached dataset
+[Worker 4] Data prepared: 800 train samples
+[Worker 4] Fine-tuning: Full
+[Worker 4] Training started: 10 epochs
+[Worker 4] Epoch 1/10: Loss=2.3967, Val Acc=8.33%
+[Worker 4] Epoch 2/10: Loss=2.2495, Val Acc=18.33%
+[Worker 4] Epoch 3/10: Loss=2.0996, Val Acc=23.33%
+[Worker 4] Epoch 4/10: Loss=1.9755, Val Acc=27.33%
+[Worker 4] Epoch 5/10: Loss=1.8457, Val Acc=34.33%
+[Worker 4] Epoch 6/10: Loss=1.7307, Val Acc=37.67%
+[Worker 4] Epoch 7/10: Loss=1.6277, Val Acc=39.33%
+[Worker 4] Epoch 8/10: Loss=1.5193, Val Acc=40.00%
+[Worker 4] Epoch 9/10: Loss=1.4280, Val Acc=39.67%
+[Worker 4] Epoch 10/10: Loss=1.3300, Val Acc=43.00%
+[Worker 4] Training completed in 60.8s, Best Val Acc: 43.00%
+[Worker 5] Config 5 started
+[Worker 5] Params: {'config_id': 5, 'learning_rate': 0.0003, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 5] Using cached dataset
+[Worker 5] Data prepared: 800 train samples
+[Worker 5] Fine-tuning: Full
+[Worker 5] Training started: 10 epochs
+[Worker 5] Epoch 1/10: Loss=2.1232, Val Acc=35.67%
+[Worker 5] Epoch 2/10: Loss=1.5125, Val Acc=45.33%
+[Worker 5] Epoch 3/10: Loss=1.1184, Val Acc=51.00%
+[Worker 5] Epoch 4/10: Loss=0.8078, Val Acc=48.33%
+[Worker 5] Epoch 5/10: Loss=0.6058, Val Acc=51.00%
+[Worker 5] Epoch 6/10: Loss=0.4948, Val Acc=52.67%
+[Worker 5] Epoch 7/10: Loss=0.4110, Val Acc=50.67%
+[Worker 5] Epoch 8/10: Loss=0.3818, Val Acc=51.33%
+[Worker 5] Epoch 9/10: Loss=0.4391, Val Acc=50.33%
+[Worker 5] Epoch 10/10: Loss=0.3705, Val Acc=53.67%
+[Worker 5] Training completed in 67.4s, Best Val Acc: 53.67%
+[Worker 6] Config 6 started
+[Worker 6] Params: {'config_id': 6, 'learning_rate': 0.0003, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 6] Using cached dataset
+[Worker 6] Data prepared: 800 train samples
+[Worker 6] Fine-tuning: Full
+[Worker 6] Training started: 10 epochs
+[Worker 6] Epoch 1/10: Loss=2.4240, Val Acc=6.67%
+[Worker 6] Epoch 2/10: Loss=2.3202, Val Acc=10.33%
+[Worker 6] Epoch 3/10: Loss=2.2130, Val Acc=17.67%
+[Worker 6] Epoch 4/10: Loss=2.1227, Val Acc=24.67%
+[Worker 6] Epoch 5/10: Loss=2.0407, Val Acc=28.67%
+[Worker 6] Epoch 6/10: Loss=1.9616, Val Acc=31.67%
+[Worker 6] Epoch 7/10: Loss=1.8936, Val Acc=33.00%
+[Worker 6] Epoch 8/10: Loss=1.8109, Val Acc=35.67%
+[Worker 6] Epoch 9/10: Loss=1.7467, Val Acc=40.67%
+[Worker 6] Epoch 10/10: Loss=1.6660, Val Acc=41.33%
+[Worker 6] Training completed in 56.4s, Best Val Acc: 41.33%
+[Worker 0] Config 7 started
+[Worker 0] Params: {'config_id': 7, 'learning_rate': 0.0003, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.1703, Val Acc=17.33%
+[Worker 0] Epoch 2/10: Loss=1.5258, Val Acc=39.33%
+[Worker 0] Epoch 3/10: Loss=1.1001, Val Acc=48.00%
+[Worker 0] Epoch 4/10: Loss=0.7367, Val Acc=47.33%
+[Worker 0] Epoch 5/10: Loss=0.5102, Val Acc=49.33%
+[Worker 0] Epoch 6/10: Loss=0.3531, Val Acc=49.33%
+[Worker 0] Epoch 7/10: Loss=0.2175, Val Acc=49.67%
+[Worker 0] Epoch 8/10: Loss=0.1760, Val Acc=52.67%
+[Worker 0] Epoch 9/10: Loss=0.1581, Val Acc=51.33%
+[Worker 0] Epoch 10/10: Loss=0.1424, Val Acc=51.67%
+[Worker 0] Training completed in 57.6s, Best Val Acc: 52.67%
+[Worker 1] Config 8 started
+[Worker 1] Params: {'config_id': 8, 'learning_rate': 0.0005, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.3722, Val Acc=9.67%
+[Worker 1] Epoch 2/10: Loss=2.1757, Val Acc=28.33%
+[Worker 1] Epoch 3/10: Loss=2.0007, Val Acc=33.33%
+[Worker 1] Epoch 4/10: Loss=1.8129, Val Acc=35.00%
+[Worker 1] Epoch 5/10: Loss=1.6539, Val Acc=42.67%
+[Worker 1] Epoch 6/10: Loss=1.4993, Val Acc=43.33%
+[Worker 1] Epoch 7/10: Loss=1.3640, Val Acc=45.67%
+[Worker 1] Epoch 8/10: Loss=1.2109, Val Acc=47.00%
+[Worker 1] Epoch 9/10: Loss=1.1159, Val Acc=49.67%
+[Worker 1] Epoch 10/10: Loss=1.0079, Val Acc=50.00%
+[Worker 1] Training completed in 62.0s, Best Val Acc: 50.00%
+[Worker 2] Config 9 started
+[Worker 2] Params: {'config_id': 9, 'learning_rate': 0.0005, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.0228, Val Acc=37.00%
+[Worker 2] Epoch 2/10: Loss=1.3754, Val Acc=44.33%
+[Worker 2] Epoch 3/10: Loss=0.9922, Val Acc=46.33%
+[Worker 2] Epoch 4/10: Loss=0.7329, Val Acc=49.33%
+[Worker 2] Epoch 5/10: Loss=0.6138, Val Acc=50.33%
+[Worker 2] Epoch 6/10: Loss=0.5158, Val Acc=48.00%
+[Worker 2] Epoch 7/10: Loss=0.5524, Val Acc=52.00%
+[Worker 2] Epoch 8/10: Loss=0.5474, Val Acc=52.00%
+[Worker 2] Epoch 9/10: Loss=0.4728, Val Acc=49.00%
+[Worker 2] Epoch 10/10: Loss=0.3706, Val Acc=53.33%
+[Worker 2] Training completed in 63.6s, Best Val Acc: 53.33%
+[Worker 3] Config 10 started
+[Worker 3] Params: {'config_id': 10, 'learning_rate': 0.0005, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.4163, Val Acc=7.67%
+[Worker 3] Epoch 2/10: Loss=2.2575, Val Acc=10.33%
+[Worker 3] Epoch 3/10: Loss=2.1235, Val Acc=23.33%
+[Worker 3] Epoch 4/10: Loss=1.9957, Val Acc=29.67%
+[Worker 3] Epoch 5/10: Loss=1.8778, Val Acc=34.33%
+[Worker 3] Epoch 6/10: Loss=1.7537, Val Acc=36.00%
+[Worker 3] Epoch 7/10: Loss=1.6597, Val Acc=38.00%
+[Worker 3] Epoch 8/10: Loss=1.5475, Val Acc=38.67%
+[Worker 3] Epoch 9/10: Loss=1.4459, Val Acc=41.00%
+[Worker 3] Epoch 10/10: Loss=1.3287, Val Acc=42.67%
+[Worker 3] Training completed in 57.4s, Best Val Acc: 42.67%
+[Worker 4] Config 11 started
+[Worker 4] Params: {'config_id': 11, 'learning_rate': 0.0005, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 4] Using cached dataset
+[Worker 4] Data prepared: 800 train samples
+[Worker 4] Fine-tuning: Full
+[Worker 4] Training started: 10 epochs
+[Worker 4] Epoch 1/10: Loss=2.0745, Val Acc=27.33%
+[Worker 4] Epoch 2/10: Loss=1.3623, Val Acc=43.67%
+[Worker 4] Epoch 3/10: Loss=0.9134, Val Acc=46.67%
+[Worker 4] Epoch 4/10: Loss=0.5590, Val Acc=44.33%
+[Worker 4] Epoch 5/10: Loss=0.3816, Val Acc=49.33%
+[Worker 4] Epoch 6/10: Loss=0.2661, Val Acc=43.67%
+[Worker 4] Epoch 7/10: Loss=0.2484, Val Acc=47.67%
+[Worker 4] Epoch 8/10: Loss=0.2501, Val Acc=48.33%
+[Worker 4] Epoch 9/10: Loss=0.2434, Val Acc=50.00%
+[Worker 4] Epoch 10/10: Loss=0.2387, Val Acc=50.00%
+[Worker 4] Training completed in 57.7s, Best Val Acc: 50.00%
+[Worker 5] Config 12 started
+[Worker 5] Params: {'config_id': 12, 'learning_rate': 0.001, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 5] Using cached dataset
+[Worker 5] Data prepared: 800 train samples
+[Worker 5] Fine-tuning: Full
+[Worker 5] Training started: 10 epochs
+[Worker 5] Epoch 1/10: Loss=2.3253, Val Acc=18.67%
+[Worker 5] Epoch 2/10: Loss=2.0195, Val Acc=34.67%
+[Worker 5] Epoch 3/10: Loss=1.7384, Val Acc=40.00%
+[Worker 5] Epoch 4/10: Loss=1.4927, Val Acc=44.33%
+[Worker 5] Epoch 5/10: Loss=1.2761, Val Acc=49.33%
+[Worker 5] Epoch 6/10: Loss=1.0853, Val Acc=46.33%
+[Worker 5] Epoch 7/10: Loss=0.8896, Val Acc=50.00%
+[Worker 5] Epoch 8/10: Loss=0.8164, Val Acc=39.67%
+[Worker 5] Epoch 9/10: Loss=0.9466, Val Acc=51.33%
+[Worker 5] Epoch 10/10: Loss=0.7231, Val Acc=49.67%
+[Worker 5] Training completed in 61.5s, Best Val Acc: 51.33%
+[Worker 6] Config 13 started
+[Worker 6] Params: {'config_id': 13, 'learning_rate': 0.001, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 6] Using cached dataset
+[Worker 6] Data prepared: 800 train samples
+[Worker 6] Fine-tuning: Full
+[Worker 6] Training started: 10 epochs
+[Worker 6] Epoch 1/10: Loss=2.0004, Val Acc=29.00%
+[Worker 6] Epoch 2/10: Loss=1.4687, Val Acc=43.33%
+[Worker 6] Epoch 3/10: Loss=1.1440, Val Acc=49.33%
+[Worker 6] Epoch 4/10: Loss=0.9162, Val Acc=47.33%
+[Worker 6] Epoch 5/10: Loss=0.8517, Val Acc=44.00%
+[Worker 6] Epoch 6/10: Loss=0.7905, Val Acc=51.67%
+[Worker 6] Epoch 7/10: Loss=0.7052, Val Acc=53.33%
+[Worker 6] Epoch 8/10: Loss=0.6100, Val Acc=55.33%
+[Worker 6] Epoch 9/10: Loss=0.6312, Val Acc=51.33%
+[Worker 6] Epoch 10/10: Loss=0.5207, Val Acc=52.00%
+[Worker 6] Training completed in 64.2s, Best Val Acc: 55.33%
+[Worker 0] Config 14 started
+[Worker 0] Params: {'config_id': 14, 'learning_rate': 0.001, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.3931, Val Acc=8.67%
+[Worker 0] Epoch 2/10: Loss=2.1454, Val Acc=21.33%
+[Worker 0] Epoch 3/10: Loss=1.9332, Val Acc=35.67%
+[Worker 0] Epoch 4/10: Loss=1.7285, Val Acc=39.33%
+[Worker 0] Epoch 5/10: Loss=1.5552, Val Acc=43.00%
+[Worker 0] Epoch 6/10: Loss=1.3717, Val Acc=43.67%
+[Worker 0] Epoch 7/10: Loss=1.2087, Val Acc=48.00%
+[Worker 0] Epoch 8/10: Loss=1.0471, Val Acc=49.00%
+[Worker 0] Epoch 9/10: Loss=0.9177, Val Acc=48.33%
+[Worker 0] Epoch 10/10: Loss=0.7980, Val Acc=50.00%
+[Worker 0] Training completed in 55.8s, Best Val Acc: 50.00%
+[Worker 1] Config 15 started
+[Worker 1] Params: {'config_id': 15, 'learning_rate': 0.001, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=1.9570, Val Acc=33.67%
+[Worker 1] Epoch 2/10: Loss=1.2620, Val Acc=46.00%
+[Worker 1] Epoch 3/10: Loss=0.9209, Val Acc=47.33%
+[Worker 1] Epoch 4/10: Loss=0.5674, Val Acc=52.33%
+[Worker 1] Epoch 5/10: Loss=0.4509, Val Acc=50.00%
+[Worker 1] Epoch 6/10: Loss=0.4381, Val Acc=51.00%
+[Worker 1] Epoch 7/10: Loss=0.3791, Val Acc=55.33%
+[Worker 1] Epoch 8/10: Loss=0.3494, Val Acc=49.33%
+[Worker 1] Epoch 9/10: Loss=0.3640, Val Acc=52.33%
+[Worker 1] Epoch 10/10: Loss=0.3182, Val Acc=52.67%
+[Worker 1] Training completed in 58.6s, Best Val Acc: 55.33%
+[Worker 2] Config 16 started
+[Worker 2] Params: {'config_id': 16, 'learning_rate': 0.003, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.2227, Val Acc=29.33%
+[Worker 2] Epoch 2/10: Loss=1.7630, Val Acc=38.33%
+[Worker 2] Epoch 3/10: Loss=1.3998, Val Acc=43.00%
+[Worker 2] Epoch 4/10: Loss=1.1429, Val Acc=44.67%
+[Worker 2] Epoch 5/10: Loss=0.9188, Val Acc=45.33%
+[Worker 2] Epoch 6/10: Loss=0.7926, Val Acc=46.33%
+[Worker 2] Epoch 7/10: Loss=0.6788, Val Acc=51.33%
+[Worker 2] Epoch 8/10: Loss=0.6989, Val Acc=50.00%
+[Worker 2] Epoch 9/10: Loss=0.6100, Val Acc=50.67%
+[Worker 2] Epoch 10/10: Loss=0.5125, Val Acc=48.33%
+[Worker 2] Training completed in 60.4s, Best Val Acc: 51.33%
+[Worker 3] Config 17 started
+[Worker 3] Params: {'config_id': 17, 'learning_rate': 0.003, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.0802, Val Acc=24.67%
+[Worker 3] Epoch 2/10: Loss=1.6943, Val Acc=35.33%
+[Worker 3] Epoch 3/10: Loss=1.4929, Val Acc=44.00%
+[Worker 3] Epoch 4/10: Loss=1.3272, Val Acc=31.33%
+[Worker 3] Epoch 5/10: Loss=1.3670, Val Acc=38.67%
+[Worker 3] Epoch 6/10: Loss=1.1015, Val Acc=41.33%
+[Worker 3] Epoch 7/10: Loss=1.0206, Val Acc=42.00%
+[Worker 3] Epoch 8/10: Loss=1.1311, Val Acc=42.33%
+[Worker 3] Epoch 9/10: Loss=1.1302, Val Acc=39.33%
+[Worker 3] Epoch 10/10: Loss=0.9039, Val Acc=43.67%
+[Worker 3] Training completed in 65.5s, Best Val Acc: 44.00%
+[Worker 4] Config 18 started
+[Worker 4] Params: {'config_id': 18, 'learning_rate': 0.003, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 4] Using cached dataset
+[Worker 4] Data prepared: 800 train samples
+[Worker 4] Fine-tuning: Full
+[Worker 4] Training started: 10 epochs
+[Worker 4] Epoch 1/10: Loss=2.3191, Val Acc=12.00%
+[Worker 4] Epoch 2/10: Loss=1.9462, Val Acc=34.00%
+[Worker 4] Epoch 3/10: Loss=1.5523, Val Acc=43.67%
+[Worker 4] Epoch 4/10: Loss=1.2184, Val Acc=47.33%
+[Worker 4] Epoch 5/10: Loss=0.9148, Val Acc=48.33%
+[Worker 4] Epoch 6/10: Loss=0.6391, Val Acc=47.67%
+[Worker 4] Epoch 7/10: Loss=0.4617, Val Acc=47.33%
+[Worker 4] Epoch 8/10: Loss=0.3143, Val Acc=49.33%
+[Worker 4] Epoch 9/10: Loss=0.2395, Val Acc=49.67%
+[Worker 4] Epoch 10/10: Loss=0.2125, Val Acc=48.00%
+[Worker 4] Training completed in 55.9s, Best Val Acc: 49.67%
+[Worker 5] Config 19 started
+[Worker 5] Params: {'config_id': 19, 'learning_rate': 0.003, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 5] Using cached dataset
+[Worker 5] Data prepared: 800 train samples
+[Worker 5] Fine-tuning: Full
+[Worker 5] Training started: 10 epochs
+[Worker 5] Epoch 1/10: Loss=2.0546, Val Acc=22.00%
+[Worker 5] Epoch 2/10: Loss=1.5829, Val Acc=36.33%
+[Worker 5] Epoch 3/10: Loss=1.3359, Val Acc=38.33%
+[Worker 5] Epoch 4/10: Loss=1.1550, Val Acc=40.67%
+[Worker 5] Epoch 5/10: Loss=0.9923, Val Acc=49.00%
+[Worker 5] Epoch 6/10: Loss=0.8214, Val Acc=53.33%
+[Worker 5] Epoch 7/10: Loss=0.8153, Val Acc=47.00%
+[Worker 5] Epoch 8/10: Loss=0.6421, Val Acc=40.00%
+[Worker 5] Epoch 9/10: Loss=0.6062, Val Acc=49.33%
+[Worker 5] Epoch 10/10: Loss=0.5279, Val Acc=41.67%
+[Worker 5] Training completed in 58.8s, Best Val Acc: 53.33%
+[Worker 6] Config 20 started
+[Worker 6] Params: {'config_id': 20, 'learning_rate': 0.005, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 6] Using cached dataset
+[Worker 6] Data prepared: 800 train samples
+[Worker 6] Fine-tuning: Full
+[Worker 6] Training started: 10 epochs
+[Worker 6] Epoch 1/10: Loss=2.1994, Val Acc=18.00%
+[Worker 6] Epoch 2/10: Loss=1.7429, Val Acc=34.00%
+[Worker 6] Epoch 3/10: Loss=1.4960, Val Acc=39.00%
+[Worker 6] Epoch 4/10: Loss=1.2483, Val Acc=45.33%
+[Worker 6] Epoch 5/10: Loss=1.0220, Val Acc=49.67%
+[Worker 6] Epoch 6/10: Loss=0.7918, Val Acc=49.00%
+[Worker 6] Epoch 7/10: Loss=0.7604, Val Acc=48.67%
+[Worker 6] Epoch 8/10: Loss=0.7384, Val Acc=49.00%
+[Worker 6] Epoch 9/10: Loss=0.7061, Val Acc=48.33%
+[Worker 6] Epoch 10/10: Loss=0.6004, Val Acc=49.00%
+[Worker 6] Training completed in 60.9s, Best Val Acc: 49.67%
+[Worker 0] Config 21 started
+[Worker 0] Params: {'config_id': 21, 'learning_rate': 0.005, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.2125, Val Acc=12.33%
+[Worker 0] Epoch 2/10: Loss=1.9512, Val Acc=21.33%
+[Worker 0] Epoch 3/10: Loss=1.9721, Val Acc=25.33%
+[Worker 0] Epoch 4/10: Loss=1.9064, Val Acc=18.33%
+[Worker 0] Epoch 5/10: Loss=1.8442, Val Acc=27.00%
+[Worker 0] Epoch 6/10: Loss=1.8313, Val Acc=14.67%
+[Worker 0] Epoch 7/10: Loss=1.9143, Val Acc=21.33%
+[Worker 0] Epoch 8/10: Loss=1.8460, Val Acc=24.33%
+[Worker 0] Epoch 9/10: Loss=1.7547, Val Acc=27.33%
+[Worker 0] Epoch 10/10: Loss=1.5573, Val Acc=29.67%
+[Worker 0] Training completed in 63.9s, Best Val Acc: 29.67%
+[Worker 1] Config 22 started
+[Worker 1] Params: {'config_id': 22, 'learning_rate': 0.005, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.2694, Val Acc=23.33%
+[Worker 1] Epoch 2/10: Loss=1.7950, Val Acc=38.00%
+[Worker 1] Epoch 3/10: Loss=1.3713, Val Acc=43.67%
+[Worker 1] Epoch 4/10: Loss=1.0839, Val Acc=44.00%
+[Worker 1] Epoch 5/10: Loss=0.7855, Val Acc=45.00%
+[Worker 1] Epoch 6/10: Loss=0.5896, Val Acc=48.00%
+[Worker 1] Epoch 7/10: Loss=0.3780, Val Acc=47.33%
+[Worker 1] Epoch 8/10: Loss=0.2967, Val Acc=47.67%
+[Worker 1] Epoch 9/10: Loss=0.2492, Val Acc=51.00%
+[Worker 1] Epoch 10/10: Loss=0.2152, Val Acc=48.33%
+[Worker 1] Training completed in 57.2s, Best Val Acc: 51.00%
+[Worker 2] Config 23 started
+[Worker 2] Params: {'config_id': 23, 'learning_rate': 0.005, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.1923, Val Acc=13.67%
+[Worker 2] Epoch 2/10: Loss=1.8128, Val Acc=20.67%
+[Worker 2] Epoch 3/10: Loss=1.6099, Val Acc=33.00%
+[Worker 2] Epoch 4/10: Loss=1.4594, Val Acc=25.33%
+[Worker 2] Epoch 5/10: Loss=1.3367, Val Acc=38.33%
+[Worker 2] Epoch 6/10: Loss=1.2237, Val Acc=33.33%
+[Worker 2] Epoch 7/10: Loss=1.0414, Val Acc=42.67%
+[Worker 2] Epoch 8/10: Loss=1.0370, Val Acc=37.33%
+[Worker 2] Epoch 9/10: Loss=1.0437, Val Acc=36.67%
+[Worker 2] Epoch 10/10: Loss=1.1432, Val Acc=36.00%
+[Worker 2] Training completed in 57.6s, Best Val Acc: 42.67%
+[Worker 3] Config 24 started
+[Worker 3] Params: {'config_id': 24, 'learning_rate': 0.01, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.2182, Val Acc=23.00%
+[Worker 3] Epoch 2/10: Loss=1.8294, Val Acc=32.67%
+[Worker 3] Epoch 3/10: Loss=1.6726, Val Acc=31.67%
+[Worker 3] Epoch 4/10: Loss=1.4486, Val Acc=37.00%
+[Worker 3] Epoch 5/10: Loss=1.3142, Val Acc=39.00%
+[Worker 3] Epoch 6/10: Loss=1.1348, Val Acc=37.67%
+[Worker 3] Epoch 7/10: Loss=1.0165, Val Acc=45.67%
+[Worker 3] Epoch 8/10: Loss=1.0163, Val Acc=40.67%
+[Worker 3] Epoch 9/10: Loss=0.9048, Val Acc=41.00%
+[Worker 3] Epoch 10/10: Loss=0.7697, Val Acc=42.00%
+[Worker 3] Training completed in 62.2s, Best Val Acc: 45.67%
+[Worker 4] Config 25 started
+[Worker 4] Params: {'config_id': 25, 'learning_rate': 0.01, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 4] Using cached dataset
+[Worker 4] Data prepared: 800 train samples
+[Worker 4] Fine-tuning: Full
+[Worker 4] Training started: 10 epochs
+[Worker 4] Epoch 1/10: Loss=2.4355, Val Acc=13.67%
+[Worker 4] Epoch 2/10: Loss=2.3883, Val Acc=10.67%
+[Worker 4] Epoch 3/10: Loss=2.2252, Val Acc=12.67%
+[Worker 4] Epoch 4/10: Loss=2.1042, Val Acc=14.00%
+[Worker 4] Epoch 5/10: Loss=2.0669, Val Acc=20.33%
+[Worker 4] Epoch 6/10: Loss=2.0514, Val Acc=21.00%
+[Worker 4] Epoch 7/10: Loss=2.0279, Val Acc=20.67%
+[Worker 4] Epoch 8/10: Loss=1.9295, Val Acc=16.33%
+[Worker 4] Epoch 9/10: Loss=1.9691, Val Acc=21.00%
+[Worker 4] Epoch 10/10: Loss=1.8652, Val Acc=23.00%
+[Worker 4] Training completed in 63.4s, Best Val Acc: 23.00%
+[Worker 5] Config 26 started
+[Worker 5] Params: {'config_id': 26, 'learning_rate': 0.01, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 5] Using cached dataset
+[Worker 5] Data prepared: 800 train samples
+[Worker 5] Fine-tuning: Full
+[Worker 5] Training started: 10 epochs
+[Worker 5] Epoch 1/10: Loss=2.2319, Val Acc=23.00%
+[Worker 5] Epoch 2/10: Loss=1.7657, Val Acc=31.33%
+[Worker 5] Epoch 3/10: Loss=1.3958, Val Acc=40.33%
+[Worker 5] Epoch 4/10: Loss=1.0283, Val Acc=42.67%
+[Worker 5] Epoch 5/10: Loss=0.8392, Val Acc=45.67%
+[Worker 5] Epoch 6/10: Loss=0.6501, Val Acc=46.67%
+[Worker 5] Epoch 7/10: Loss=0.6960, Val Acc=44.33%
+[Worker 5] Epoch 8/10: Loss=0.6937, Val Acc=45.00%
+[Worker 5] Epoch 9/10: Loss=0.5682, Val Acc=44.00%
+[Worker 5] Epoch 10/10: Loss=0.5114, Val Acc=49.00%
+[Worker 5] Training completed in 56.7s, Best Val Acc: 49.00%
+[Worker 6] Config 27 started
+[Worker 6] Params: {'config_id': 27, 'learning_rate': 0.01, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 6] Using cached dataset
+[Worker 6] Data prepared: 800 train samples
+[Worker 6] Fine-tuning: Full
+[Worker 6] Training started: 10 epochs
+[Worker 6] Epoch 1/10: Loss=2.3785, Val Acc=10.33%
+[Worker 6] Epoch 2/10: Loss=2.0155, Val Acc=18.00%
+[Worker 6] Epoch 3/10: Loss=1.9057, Val Acc=21.00%
+[Worker 6] Epoch 4/10: Loss=1.6850, Val Acc=23.67%
+[Worker 6] Epoch 5/10: Loss=1.7262, Val Acc=22.67%
+[Worker 6] Epoch 6/10: Loss=1.6201, Val Acc=26.00%
+[Worker 6] Epoch 7/10: Loss=1.6239, Val Acc=25.00%
+[Worker 6] Epoch 8/10: Loss=1.5314, Val Acc=30.33%
+[Worker 6] Epoch 9/10: Loss=1.4691, Val Acc=25.33%
+[Worker 6] Epoch 10/10: Loss=1.4759, Val Acc=29.67%
+[Worker 6] Training completed in 58.0s, Best Val Acc: 30.33%
+[Worker 0] Config 28 started
+[Worker 0] Params: {'config_id': 28, 'learning_rate': 0.03, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.3795, Val Acc=11.00%
+[Worker 0] Epoch 2/10: Loss=2.3320, Val Acc=15.67%
+[Worker 0] Epoch 3/10: Loss=2.4007, Val Acc=14.67%
+[Worker 0] Epoch 4/10: Loss=2.4036, Val Acc=15.67%
+[Worker 0] Epoch 5/10: Loss=2.2470, Val Acc=19.33%
+[Worker 0] Epoch 6/10: Loss=2.1327, Val Acc=23.67%
+[Worker 0] Epoch 7/10: Loss=2.2433, Val Acc=20.00%
+[Worker 0] Epoch 8/10: Loss=2.2146, Val Acc=15.67%
+[Worker 0] Epoch 9/10: Loss=2.1764, Val Acc=23.67%
+[Worker 0] Epoch 10/10: Loss=2.0692, Val Acc=20.33%
+[Worker 0] Training completed in 60.9s, Best Val Acc: 23.67%
+[Worker 1] Config 29 started
+[Worker 1] Params: {'config_id': 29, 'learning_rate': 0.03, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.9078, Val Acc=10.33%
+[Worker 1] Epoch 2/10: Loss=2.3061, Val Acc=18.67%
+[Worker 1] Epoch 3/10: Loss=2.1682, Val Acc=21.00%
+[Worker 1] Epoch 4/10: Loss=2.0433, Val Acc=23.33%
+[Worker 1] Epoch 5/10: Loss=2.0314, Val Acc=17.67%
+[Worker 1] Epoch 6/10: Loss=1.9885, Val Acc=24.67%
+[Worker 1] Epoch 7/10: Loss=1.9713, Val Acc=21.67%
+[Worker 1] Epoch 8/10: Loss=1.9085, Val Acc=19.00%
+[Worker 1] Epoch 9/10: Loss=1.9537, Val Acc=25.00%
+[Worker 1] Epoch 10/10: Loss=1.8805, Val Acc=18.00%
+[Worker 1] Training completed in 65.9s, Best Val Acc: 25.00%
+[Worker 2] Config 30 started
+[Worker 2] Params: {'config_id': 30, 'learning_rate': 0.03, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.0944, Val Acc=21.33%
+[Worker 2] Epoch 2/10: Loss=1.8264, Val Acc=24.67%
+[Worker 2] Epoch 3/10: Loss=1.6566, Val Acc=31.00%
+[Worker 2] Epoch 4/10: Loss=1.4441, Val Acc=41.00%
+[Worker 2] Epoch 5/10: Loss=1.2517, Val Acc=36.00%
+[Worker 2] Epoch 6/10: Loss=1.2125, Val Acc=40.67%
+[Worker 2] Epoch 7/10: Loss=1.0842, Val Acc=38.33%
+[Worker 2] Epoch 8/10: Loss=0.9538, Val Acc=30.67%
+[Worker 2] Epoch 9/10: Loss=0.9378, Val Acc=38.33%
+[Worker 2] Epoch 10/10: Loss=0.9538, Val Acc=42.67%
+[Worker 2] Training completed in 55.6s, Best Val Acc: 42.67%
+[Worker 3] Config 31 started
+[Worker 3] Params: {'config_id': 31, 'learning_rate': 0.03, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.9776, Val Acc=8.67%
+[Worker 3] Epoch 2/10: Loss=2.4606, Val Acc=10.00%
+[Worker 3] Epoch 3/10: Loss=2.5787, Val Acc=10.67%
+[Worker 3] Epoch 4/10: Loss=2.2978, Val Acc=10.00%
+[Worker 3] Epoch 5/10: Loss=2.1672, Val Acc=14.67%
+[Worker 3] Epoch 6/10: Loss=2.0877, Val Acc=22.67%
+[Worker 3] Epoch 7/10: Loss=2.0476, Val Acc=19.00%
+[Worker 3] Epoch 8/10: Loss=2.0030, Val Acc=16.00%
+[Worker 3] Epoch 9/10: Loss=2.0078, Val Acc=21.00%
+[Worker 3] Epoch 10/10: Loss=1.9541, Val Acc=27.33%
+[Worker 3] Training completed in 59.0s, Best Val Acc: 27.33%
+
+================================================================================
+END OF REPORT
+================================================================================
