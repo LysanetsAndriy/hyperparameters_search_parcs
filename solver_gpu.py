@@ -120,8 +120,9 @@ class Solver:
                 for result in batch_results:
                     if result['status'] == 'success':
                         log.info(f"Config {result['config_id']}: "
-                                f"acc={result['best_val_acc']:.2f}%, "
-                                f"time={result['training_time']:.1f}s")
+                                 f"acc={result['best_val_acc']:.2f}%, "
+                                 f"time={result['training_time']:.1f}s, "
+                                 f"device={result['device']}") # ADDED DEVICE
                         # Collect worker logs
                         if 'logs' in result:
                             self.all_logs.extend(result['logs'])
@@ -140,7 +141,7 @@ class Solver:
         if successful:
             best = max(successful, key=lambda x: x['best_val_acc'])
             log.info(f"Best configuration: ID={best['config_id']}, "
-                    f"acc={best['best_val_acc']:.2f}%")
+                     f"acc={best['best_val_acc']:.2f}%")
         
         # Write results
         self.write_output(all_results, total_configs)
@@ -154,10 +155,10 @@ class Solver:
             list of dicts: Each dict contains one hyperparameter configuration
         """
         # Define hyperparameter space
-        learning_rates = [0.0001, 0.001, 0.01] #[0.0001, 0.0003, 0.0005, 0.001, 0.003, 0.005, 0.01, 0.03]
+        learning_rates = [0.0001, 0.0003, 0.0005, 0.001, 0.003, 0.005, 0.01, 0.03]
         batch_sizes = [32, 64]
         optimizers = ['sgd', 'adam']
-        weight_decays = [0]
+        weight_decays = [0.0]
         fine_tuning_strategies = ['full'] #['full', 'partial']
         
         # Generate all combinations
@@ -216,13 +217,27 @@ class Solver:
         try:
             worker_log.info(f"Starting training for config {config['config_id']}")
             worker_log.info(f"Hyperparameters: lr={config['learning_rate']}, "
-                          f"batch={config['batch_size']}, "
-                          f"opt={config['optimizer']}, "
-                          f"finetune={config['fine_tuning']}")
+                            f"batch={config['batch_size']}, "
+                            f"opt={config['optimizer']}, "
+                            f"finetune={config['fine_tuning']}")
             
             logs.append(f"[Worker {worker_id}] Config {config['config_id']} started")
             logs.append(f"[Worker {worker_id}] Params: {config}")
             
+            
+            # 1. Set device
+            if torch.cuda.is_available():
+                device = torch.device("cuda")
+                device_name = torch.cuda.get_device_name(0)
+                logs.append(f"[Worker {worker_id}] CUDA is available. Using device: {device_name}")
+                worker_log.info(f"CUDA is available. Using device: {device_name}")
+            else:
+                device = torch.device("cpu")
+                device_name = "cpu"
+                logs.append(f"[Worker {worker_id}] CUDA not found. Using CPU.")
+                worker_log.info("CUDA not found. Using CPU.")
+
+
             # Set random seed for reproducibility
             torch.manual_seed(42)
             np.random.seed(42)
@@ -251,8 +266,8 @@ class Solver:
             mean = data['mean']        # (3,)
             std = data['std']          # (3,)
             
-            TRAIN_SIZE = 200
-            VAL_SIZE = 80
+            TRAIN_SIZE = 800
+            VAL_SIZE = 300
 
             X_train = X_train[:TRAIN_SIZE]
             y_train = y_train[:TRAIN_SIZE]
@@ -280,8 +295,9 @@ class Solver:
             train_dataset = TensorDataset(X_train, y_train)
             val_dataset = TensorDataset(X_val, y_val)
             
-            train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-            val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+            # Use pin_memory=True for faster data transfer to GPU
+            train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, pin_memory=True)
+            val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, pin_memory=True)
             
             worker_log.info(f"Data prepared: {len(train_dataset)} train, {len(val_dataset)} val")
             logs.append(f"[Worker {worker_id}] Data prepared: {len(train_dataset)} train samples")
@@ -305,6 +321,7 @@ class Solver:
 
                 nn.Linear(256, 10)
             )
+            
             # Apply fine-tuning strategy
             if config['fine_tuning'] == 'partial':
                 # Freeze feature extractor, train only classifier
@@ -317,9 +334,12 @@ class Solver:
                 worker_log.info("Fine-tuning: Full (all layers)")
                 logs.append(f"[Worker {worker_id}] Fine-tuning: Full")
             
-            # Loss and optimizer
-            criterion = nn.CrossEntropyLoss()
+            # 2. Move model to device
+            model.to(device)
             
+            # 3. Move criterion to device
+            criterion = nn.CrossEntropyLoss().to(device)
+
             if config['optimizer'] == 'sgd':
                 optimizer = optim.SGD(
                     filter(lambda p: p.requires_grad, model.parameters()),
@@ -348,6 +368,10 @@ class Solver:
                 train_loss = 0.0
                 
                 for batch_idx, (inputs, targets) in enumerate(train_loader):
+                    
+                    # 4. Move data batch to device
+                    inputs, targets = inputs.to(device, non_blocking=True), targets.to(device, non_blocking=True)
+                
                     optimizer.zero_grad()
                     outputs = model(inputs)
                     loss = criterion(outputs, targets)
@@ -366,6 +390,10 @@ class Solver:
                 
                 with torch.no_grad():
                     for inputs, targets in val_loader:
+
+                        # 5. Move data batch to device
+                        inputs, targets = inputs.to(device, non_blocking=True), targets.to(device, non_blocking=True)
+                        
                         outputs = model(inputs)
                         _, predicted = outputs.max(1)
                         total += targets.size(0)
@@ -378,14 +406,14 @@ class Solver:
                     best_val_acc = val_acc
                 
                 epoch_log = (f"[Worker {worker_id}] Epoch {epoch+1}/{num_epochs}: "
-                           f"Loss={avg_train_loss:.4f}, Val Acc={val_acc:.2f}%")
+                             f"Loss={avg_train_loss:.4f}, Val Acc={val_acc:.2f}%")
                 worker_log.info(epoch_log)
                 logs.append(epoch_log)
             
             training_time = time.time() - start_time
             
             final_log = (f"[Worker {worker_id}] Training completed in {training_time:.1f}s, "
-                        f"Best Val Acc: {best_val_acc:.2f}%")
+                         f"Best Val Acc: {best_val_acc:.2f}%")
             worker_log.info(final_log)
             logs.append(final_log)
             
@@ -400,7 +428,8 @@ class Solver:
                 'val_accuracies': val_accuracies,
                 'training_time': training_time,
                 'worker_id': worker_id,
-                'logs': logs
+                'logs': logs,
+                'device': device_name # ADDED DEVICE NAME
             }
             
         except Exception as e:
@@ -473,7 +502,8 @@ class Solver:
                 f.write(f"Best Validation Accuracy: {best['best_val_acc']:.2f}%\n")
                 f.write(f"Final Training Loss: {best['final_train_loss']:.4f}\n")
                 f.write(f"Training Time: {best['training_time']:.1f}s\n")
-                f.write(f"Worker ID: {best['worker_id']}\n\n")
+                f.write(f"Worker ID: {best['worker_id']}\n")
+                f.write(f"Trained on: {best['device']}\n\n") # ADDED DEVICE
 
                 # Compact table with all results
                 f.write("=" * 80 + "\n")
@@ -481,21 +511,23 @@ class Solver:
                 f.write("=" * 80 + "\n\n")
 
                 # Table header
-                f.write("Rank | Config |   LR    | Batch | Opt  |   WD    | Time(s) |  Loss  | Val Acc\n")
-                f.write("-----|--------|---------|-------|------|---------|---------|--------|--------\n")
+                f.write("Rank | Config |    LR     | Batch | Opt  |    WD     | Time(s) |  Loss  | Val Acc | Device\n")
+                f.write("-----|--------|-----------|-------|------|-----------|---------|--------|---------|-------\n")
 
                 # Table rows
                 for rank, result in enumerate(successful_sorted, 1):
                     cfg = result['config']
+                    device_str = "GPU" if "NVIDIA" in result['device'] else "cpu"
                     f.write(f"{rank:4d} | "
                             f"{result['config_id']:6d} | "
-                            f"{cfg['learning_rate']:7.4f} | "
+                            f"{cfg['learning_rate']:9.4f} | "
                             f"{cfg['batch_size']:5d} | "
                             f"{cfg['optimizer']:4s} | "
-                            f"{cfg['weight_decay']:7.5f} | "
+                            f"{cfg['weight_decay']:9.5f} | "
                             f"{result['training_time']:7.1f} | "
                             f"{result['final_train_loss']:6.4f} | "
-                            f"{result['best_val_acc']:6.2f}%\n")
+                            f"{result['best_val_acc']:7.2f}% | "
+                            f"{device_str}\n") # ADDED DEVICE
 
                 f.write("\n")
 
@@ -529,4 +561,3 @@ class Solver:
             f.write("=" * 80 + "\n")
 
         log.info("Output file written successfully")
-

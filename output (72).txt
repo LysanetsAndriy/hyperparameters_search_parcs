@@ -1,0 +1,649 @@
+================================================================================
+GRID SEARCH RESULTS: MobileNetV2 on CIFAR-10
+================================================================================
+
+Total Configurations: 32
+Successful: 32
+Failed: 0
+
+================================================================================
+BEST CONFIGURATION
+================================================================================
+Config ID: 13
+Learning Rate: 0.001
+Batch Size: 32
+Optimizer: ADAM
+Weight Decay: 0
+Best Validation Accuracy: 59.67%
+Final Training Loss: 0.5103
+Training Time: 6.7s
+Worker ID: 1
+Trained on: Tesla T4
+
+================================================================================
+ALL RESULTS (Sorted by Validation Accuracy)
+================================================================================
+
+Rank | Config |    LR     | Batch | Opt  |    WD     | Time(s) |  Loss  | Val Acc | Device
+-----|--------|-----------|-------|------|-----------|---------|--------|---------|-------
+   1 |     13 |    0.0010 |    32 | adam |   0.00000 |     6.7 | 0.5103 |   59.67% | cpu
+   2 |     15 |    0.0010 |    64 | adam |   0.00000 |     4.0 | 0.3172 |   55.67% | cpu
+   3 |     16 |    0.0030 |    32 | sgd  |   0.00000 |     7.0 | 0.4295 |   55.33% | cpu
+   4 |      9 |    0.0005 |    32 | adam |   0.00000 |     7.4 | 0.3528 |   54.00% | cpu
+   5 |      7 |    0.0003 |    64 | adam |   0.00000 |     4.1 | 0.1832 |   52.00% | cpu
+   6 |     12 |    0.0010 |    32 | sgd  |   0.00000 |     7.2 | 0.5022 |   52.00% | cpu
+   7 |     19 |    0.0030 |    64 | adam |   0.00000 |     4.0 | 0.7321 |   52.00% | cpu
+   8 |     20 |    0.0050 |    32 | sgd  |   0.00000 |     7.1 | 0.5776 |   51.67% | cpu
+   9 |      1 |    0.0001 |    32 | adam |   0.00000 |    15.8 | 0.4894 |   51.33% | cpu
+  10 |      5 |    0.0003 |    32 | adam |   0.00000 |     6.7 | 0.2827 |   51.00% | cpu
+  11 |     22 |    0.0050 |    64 | sgd  |   0.00000 |     3.8 | 0.3912 |   51.00% | cpu
+  12 |     11 |    0.0005 |    64 | adam |   0.00000 |     4.6 | 0.2290 |   50.67% | cpu
+  13 |     26 |    0.0100 |    64 | sgd  |   0.00000 |     3.9 | 0.4330 |   50.67% | cpu
+  14 |     18 |    0.0030 |    64 | sgd  |   0.00000 |     3.9 | 0.2163 |   50.00% | cpu
+  15 |      3 |    0.0001 |    64 | adam |   0.00000 |    11.3 | 0.5338 |   49.67% | cpu
+  16 |     14 |    0.0010 |    64 | sgd  |   0.00000 |     3.8 | 0.8411 |   49.00% | cpu
+  17 |      8 |    0.0005 |    32 | sgd  |   0.00000 |     7.8 | 0.9539 |   47.33% | cpu
+  18 |     10 |    0.0005 |    64 | sgd  |   0.00000 |     4.7 | 1.4250 |   45.67% | cpu
+  19 |      4 |    0.0003 |    32 | sgd  |   0.00000 |     7.2 | 1.3589 |   43.67% | cpu
+  20 |     24 |    0.0100 |    32 | sgd  |   0.00000 |     7.2 | 0.9378 |   43.67% | cpu
+  21 |     30 |    0.0300 |    64 | sgd  |   0.00000 |     3.8 | 0.9217 |   43.67% | cpu
+  22 |     23 |    0.0050 |    64 | adam |   0.00000 |     4.1 | 1.0011 |   43.33% | cpu
+  23 |     17 |    0.0030 |    32 | adam |   0.00000 |     6.7 | 0.9146 |   42.67% | cpu
+  24 |      6 |    0.0003 |    64 | sgd  |   0.00000 |     3.9 | 1.6883 |   35.33% | cpu
+  25 |     21 |    0.0050 |    32 | adam |   0.00000 |     6.6 | 1.2594 |   33.67% | cpu
+  26 |     28 |    0.0300 |    32 | sgd  |   0.00000 |     7.1 | 1.5638 |   33.00% | cpu
+  27 |     27 |    0.0100 |    64 | adam |   0.00000 |     4.0 | 1.5132 |   31.33% | cpu
+  28 |      0 |    0.0001 |    32 | sgd  |   0.00000 |    16.4 | 1.9488 |   30.67% | cpu
+  29 |     25 |    0.0100 |    32 | adam |   0.00000 |     6.7 | 1.8961 |   25.33% | cpu
+  30 |     31 |    0.0300 |    64 | adam |   0.00000 |     4.0 | 1.9726 |   23.33% | cpu
+  31 |     29 |    0.0300 |    32 | adam |   0.00000 |     6.7 | 1.9328 |   23.00% | cpu
+  32 |      2 |    0.0001 |    64 | sgd  |   0.00000 |    12.1 | 2.1081 |   22.00% | cpu
+
+================================================================================
+DETAILED WORKER LOGS
+================================================================================
+
+[Worker 0] Config 0 started
+[Worker 0] Params: {'config_id': 0, 'learning_rate': 0.0001, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] CUDA is available. Using device: Tesla T4
+[Worker 0] Downloading dataset
+[Worker 0] Dataset downloaded
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.4205, Val Acc=9.33%
+[Worker 0] Epoch 2/10: Loss=2.3495, Val Acc=11.67%
+[Worker 0] Epoch 3/10: Loss=2.3046, Val Acc=16.33%
+[Worker 0] Epoch 4/10: Loss=2.2171, Val Acc=16.00%
+[Worker 0] Epoch 5/10: Loss=2.2013, Val Acc=20.00%
+[Worker 0] Epoch 6/10: Loss=2.1418, Val Acc=20.67%
+[Worker 0] Epoch 7/10: Loss=2.0858, Val Acc=22.67%
+[Worker 0] Epoch 8/10: Loss=2.0533, Val Acc=28.33%
+[Worker 0] Epoch 9/10: Loss=2.0095, Val Acc=28.67%
+[Worker 0] Epoch 10/10: Loss=1.9488, Val Acc=30.67%
+[Worker 0] Training completed in 16.4s, Best Val Acc: 30.67%
+[Worker 1] Config 1 started
+[Worker 1] Params: {'config_id': 1, 'learning_rate': 0.0001, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] CUDA is available. Using device: Tesla T4
+[Worker 1] Downloading dataset
+[Worker 1] Dataset downloaded
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.2903, Val Acc=21.67%
+[Worker 1] Epoch 2/10: Loss=1.9137, Val Acc=36.00%
+[Worker 1] Epoch 3/10: Loss=1.6630, Val Acc=40.00%
+[Worker 1] Epoch 4/10: Loss=1.3896, Val Acc=42.67%
+[Worker 1] Epoch 5/10: Loss=1.1778, Val Acc=44.33%
+[Worker 1] Epoch 6/10: Loss=1.0137, Val Acc=46.33%
+[Worker 1] Epoch 7/10: Loss=0.8264, Val Acc=47.33%
+[Worker 1] Epoch 8/10: Loss=0.7255, Val Acc=49.33%
+[Worker 1] Epoch 9/10: Loss=0.6334, Val Acc=51.33%
+[Worker 1] Epoch 10/10: Loss=0.4894, Val Acc=50.67%
+[Worker 1] Training completed in 15.8s, Best Val Acc: 51.33%
+[Worker 2] Config 2 started
+[Worker 2] Params: {'config_id': 2, 'learning_rate': 0.0001, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] CUDA is available. Using device: Tesla T4
+[Worker 2] Downloading dataset
+[Worker 2] Dataset downloaded
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.4359, Val Acc=7.33%
+[Worker 2] Epoch 2/10: Loss=2.3949, Val Acc=9.33%
+[Worker 2] Epoch 3/10: Loss=2.3273, Val Acc=13.33%
+[Worker 2] Epoch 4/10: Loss=2.2946, Val Acc=15.00%
+[Worker 2] Epoch 5/10: Loss=2.2580, Val Acc=17.00%
+[Worker 2] Epoch 6/10: Loss=2.2185, Val Acc=19.00%
+[Worker 2] Epoch 7/10: Loss=2.1990, Val Acc=17.67%
+[Worker 2] Epoch 8/10: Loss=2.1638, Val Acc=19.00%
+[Worker 2] Epoch 9/10: Loss=2.1142, Val Acc=19.33%
+[Worker 2] Epoch 10/10: Loss=2.1081, Val Acc=22.00%
+[Worker 2] Training completed in 12.1s, Best Val Acc: 22.00%
+[Worker 3] Config 3 started
+[Worker 3] Params: {'config_id': 3, 'learning_rate': 0.0001, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] CUDA is available. Using device: Tesla T4
+[Worker 3] Downloading dataset
+[Worker 3] Dataset downloaded
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.3250, Val Acc=7.00%
+[Worker 3] Epoch 2/10: Loss=1.9759, Val Acc=24.33%
+[Worker 3] Epoch 3/10: Loss=1.6974, Val Acc=37.67%
+[Worker 3] Epoch 4/10: Loss=1.4700, Val Acc=41.33%
+[Worker 3] Epoch 5/10: Loss=1.2627, Val Acc=43.00%
+[Worker 3] Epoch 6/10: Loss=1.0845, Val Acc=43.67%
+[Worker 3] Epoch 7/10: Loss=0.9216, Val Acc=44.33%
+[Worker 3] Epoch 8/10: Loss=0.7489, Val Acc=47.00%
+[Worker 3] Epoch 9/10: Loss=0.6359, Val Acc=49.67%
+[Worker 3] Epoch 10/10: Loss=0.5338, Val Acc=48.00%
+[Worker 3] Training completed in 11.3s, Best Val Acc: 49.67%
+[Worker 0] Config 4 started
+[Worker 0] Params: {'config_id': 4, 'learning_rate': 0.0003, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] CUDA is available. Using device: Tesla T4
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.3997, Val Acc=11.33%
+[Worker 0] Epoch 2/10: Loss=2.2445, Val Acc=19.33%
+[Worker 0] Epoch 3/10: Loss=2.1068, Val Acc=28.00%
+[Worker 0] Epoch 4/10: Loss=1.9817, Val Acc=34.67%
+[Worker 0] Epoch 5/10: Loss=1.8604, Val Acc=36.67%
+[Worker 0] Epoch 6/10: Loss=1.7471, Val Acc=36.00%
+[Worker 0] Epoch 7/10: Loss=1.6392, Val Acc=39.00%
+[Worker 0] Epoch 8/10: Loss=1.5691, Val Acc=39.00%
+[Worker 0] Epoch 9/10: Loss=1.4805, Val Acc=41.33%
+[Worker 0] Epoch 10/10: Loss=1.3589, Val Acc=43.67%
+[Worker 0] Training completed in 7.2s, Best Val Acc: 43.67%
+[Worker 1] Config 5 started
+[Worker 1] Params: {'config_id': 5, 'learning_rate': 0.0003, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] CUDA is available. Using device: Tesla T4
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.0876, Val Acc=26.33%
+[Worker 1] Epoch 2/10: Loss=1.4798, Val Acc=45.00%
+[Worker 1] Epoch 3/10: Loss=1.0961, Val Acc=45.33%
+[Worker 1] Epoch 4/10: Loss=0.8359, Val Acc=50.33%
+[Worker 1] Epoch 5/10: Loss=0.6625, Val Acc=50.00%
+[Worker 1] Epoch 6/10: Loss=0.5118, Val Acc=48.67%
+[Worker 1] Epoch 7/10: Loss=0.3730, Val Acc=49.67%
+[Worker 1] Epoch 8/10: Loss=0.3528, Val Acc=51.00%
+[Worker 1] Epoch 9/10: Loss=0.3138, Val Acc=48.33%
+[Worker 1] Epoch 10/10: Loss=0.2827, Val Acc=48.33%
+[Worker 1] Training completed in 6.7s, Best Val Acc: 51.00%
+[Worker 2] Config 6 started
+[Worker 2] Params: {'config_id': 6, 'learning_rate': 0.0003, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] CUDA is available. Using device: Tesla T4
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.4248, Val Acc=7.33%
+[Worker 2] Epoch 2/10: Loss=2.3350, Val Acc=12.33%
+[Worker 2] Epoch 3/10: Loss=2.2025, Val Acc=14.00%
+[Worker 2] Epoch 4/10: Loss=2.1345, Val Acc=20.67%
+[Worker 2] Epoch 5/10: Loss=2.0389, Val Acc=25.67%
+[Worker 2] Epoch 6/10: Loss=1.9648, Val Acc=29.67%
+[Worker 2] Epoch 7/10: Loss=1.9078, Val Acc=32.67%
+[Worker 2] Epoch 8/10: Loss=1.8333, Val Acc=32.67%
+[Worker 2] Epoch 9/10: Loss=1.7479, Val Acc=35.33%
+[Worker 2] Epoch 10/10: Loss=1.6883, Val Acc=35.00%
+[Worker 2] Training completed in 3.9s, Best Val Acc: 35.33%
+[Worker 3] Config 7 started
+[Worker 3] Params: {'config_id': 7, 'learning_rate': 0.0003, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] CUDA is available. Using device: Tesla T4
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.1843, Val Acc=18.67%
+[Worker 3] Epoch 2/10: Loss=1.5573, Val Acc=41.67%
+[Worker 3] Epoch 3/10: Loss=1.1037, Val Acc=45.00%
+[Worker 3] Epoch 4/10: Loss=0.7950, Val Acc=50.67%
+[Worker 3] Epoch 5/10: Loss=0.5340, Val Acc=51.67%
+[Worker 3] Epoch 6/10: Loss=0.3646, Val Acc=51.67%
+[Worker 3] Epoch 7/10: Loss=0.2753, Val Acc=51.33%
+[Worker 3] Epoch 8/10: Loss=0.2059, Val Acc=52.00%
+[Worker 3] Epoch 9/10: Loss=0.2140, Val Acc=51.67%
+[Worker 3] Epoch 10/10: Loss=0.1832, Val Acc=51.33%
+[Worker 3] Training completed in 4.1s, Best Val Acc: 52.00%
+[Worker 0] Config 8 started
+[Worker 0] Params: {'config_id': 8, 'learning_rate': 0.0005, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] CUDA is available. Using device: Tesla T4
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.3680, Val Acc=12.33%
+[Worker 0] Epoch 2/10: Loss=2.1635, Val Acc=29.33%
+[Worker 0] Epoch 3/10: Loss=1.9799, Val Acc=32.67%
+[Worker 0] Epoch 4/10: Loss=1.8054, Val Acc=36.00%
+[Worker 0] Epoch 5/10: Loss=1.6267, Val Acc=38.67%
+[Worker 0] Epoch 6/10: Loss=1.4690, Val Acc=40.67%
+[Worker 0] Epoch 7/10: Loss=1.3134, Val Acc=43.00%
+[Worker 0] Epoch 8/10: Loss=1.2007, Val Acc=44.33%
+[Worker 0] Epoch 9/10: Loss=1.0899, Val Acc=45.67%
+[Worker 0] Epoch 10/10: Loss=0.9539, Val Acc=47.33%
+[Worker 0] Training completed in 7.8s, Best Val Acc: 47.33%
+[Worker 1] Config 9 started
+[Worker 1] Params: {'config_id': 9, 'learning_rate': 0.0005, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] CUDA is available. Using device: Tesla T4
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.0005, Val Acc=34.33%
+[Worker 1] Epoch 2/10: Loss=1.3743, Val Acc=49.33%
+[Worker 1] Epoch 3/10: Loss=1.0167, Val Acc=50.67%
+[Worker 1] Epoch 4/10: Loss=0.8224, Val Acc=51.67%
+[Worker 1] Epoch 5/10: Loss=0.6725, Val Acc=44.33%
+[Worker 1] Epoch 6/10: Loss=0.5540, Val Acc=50.33%
+[Worker 1] Epoch 7/10: Loss=0.4746, Val Acc=48.67%
+[Worker 1] Epoch 8/10: Loss=0.4180, Val Acc=52.00%
+[Worker 1] Epoch 9/10: Loss=0.3478, Val Acc=54.00%
+[Worker 1] Epoch 10/10: Loss=0.3528, Val Acc=49.67%
+[Worker 1] Training completed in 7.4s, Best Val Acc: 54.00%
+[Worker 2] Config 10 started
+[Worker 2] Params: {'config_id': 10, 'learning_rate': 0.0005, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] CUDA is available. Using device: Tesla T4
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.4112, Val Acc=6.67%
+[Worker 2] Epoch 2/10: Loss=2.2930, Val Acc=13.33%
+[Worker 2] Epoch 3/10: Loss=2.1111, Val Acc=20.00%
+[Worker 2] Epoch 4/10: Loss=1.9944, Val Acc=29.33%
+[Worker 2] Epoch 5/10: Loss=1.9003, Val Acc=31.67%
+[Worker 2] Epoch 6/10: Loss=1.8193, Val Acc=38.33%
+[Worker 2] Epoch 7/10: Loss=1.7168, Val Acc=40.00%
+[Worker 2] Epoch 8/10: Loss=1.6044, Val Acc=40.33%
+[Worker 2] Epoch 9/10: Loss=1.5224, Val Acc=43.00%
+[Worker 2] Epoch 10/10: Loss=1.4250, Val Acc=45.67%
+[Worker 2] Training completed in 4.7s, Best Val Acc: 45.67%
+[Worker 3] Config 11 started
+[Worker 3] Params: {'config_id': 11, 'learning_rate': 0.0005, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] CUDA is available. Using device: Tesla T4
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.0754, Val Acc=23.00%
+[Worker 3] Epoch 2/10: Loss=1.3726, Val Acc=46.33%
+[Worker 3] Epoch 3/10: Loss=0.9178, Val Acc=50.33%
+[Worker 3] Epoch 4/10: Loss=0.5787, Val Acc=48.00%
+[Worker 3] Epoch 5/10: Loss=0.3859, Val Acc=50.67%
+[Worker 3] Epoch 6/10: Loss=0.3321, Val Acc=49.00%
+[Worker 3] Epoch 7/10: Loss=0.3002, Val Acc=49.00%
+[Worker 3] Epoch 8/10: Loss=0.2890, Val Acc=49.33%
+[Worker 3] Epoch 9/10: Loss=0.2195, Val Acc=50.00%
+[Worker 3] Epoch 10/10: Loss=0.2290, Val Acc=48.33%
+[Worker 3] Training completed in 4.6s, Best Val Acc: 50.67%
+[Worker 0] Config 12 started
+[Worker 0] Params: {'config_id': 12, 'learning_rate': 0.001, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] CUDA is available. Using device: Tesla T4
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.3113, Val Acc=16.33%
+[Worker 0] Epoch 2/10: Loss=1.9852, Val Acc=29.00%
+[Worker 0] Epoch 3/10: Loss=1.7053, Val Acc=40.00%
+[Worker 0] Epoch 4/10: Loss=1.4471, Val Acc=42.33%
+[Worker 0] Epoch 5/10: Loss=1.2124, Val Acc=47.33%
+[Worker 0] Epoch 6/10: Loss=1.0138, Val Acc=50.67%
+[Worker 0] Epoch 7/10: Loss=0.8286, Val Acc=49.33%
+[Worker 0] Epoch 8/10: Loss=0.7104, Val Acc=50.67%
+[Worker 0] Epoch 9/10: Loss=0.5980, Val Acc=51.33%
+[Worker 0] Epoch 10/10: Loss=0.5022, Val Acc=52.00%
+[Worker 0] Training completed in 7.2s, Best Val Acc: 52.00%
+[Worker 1] Config 13 started
+[Worker 1] Params: {'config_id': 13, 'learning_rate': 0.001, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] CUDA is available. Using device: Tesla T4
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=1.9153, Val Acc=40.33%
+[Worker 1] Epoch 2/10: Loss=1.3877, Val Acc=49.33%
+[Worker 1] Epoch 3/10: Loss=1.1037, Val Acc=47.67%
+[Worker 1] Epoch 4/10: Loss=0.9625, Val Acc=50.00%
+[Worker 1] Epoch 5/10: Loss=0.8608, Val Acc=47.00%
+[Worker 1] Epoch 6/10: Loss=0.7189, Val Acc=50.00%
+[Worker 1] Epoch 7/10: Loss=0.6867, Val Acc=54.33%
+[Worker 1] Epoch 8/10: Loss=0.5973, Val Acc=59.67%
+[Worker 1] Epoch 9/10: Loss=0.5925, Val Acc=52.67%
+[Worker 1] Epoch 10/10: Loss=0.5103, Val Acc=49.00%
+[Worker 1] Training completed in 6.7s, Best Val Acc: 59.67%
+[Worker 2] Config 14 started
+[Worker 2] Params: {'config_id': 14, 'learning_rate': 0.001, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] CUDA is available. Using device: Tesla T4
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.3895, Val Acc=8.67%
+[Worker 2] Epoch 2/10: Loss=2.1854, Val Acc=17.00%
+[Worker 2] Epoch 3/10: Loss=1.9633, Val Acc=28.67%
+[Worker 2] Epoch 4/10: Loss=1.7948, Val Acc=36.00%
+[Worker 2] Epoch 5/10: Loss=1.5946, Val Acc=39.67%
+[Worker 2] Epoch 6/10: Loss=1.4090, Val Acc=42.00%
+[Worker 2] Epoch 7/10: Loss=1.2511, Val Acc=45.67%
+[Worker 2] Epoch 8/10: Loss=1.0935, Val Acc=46.33%
+[Worker 2] Epoch 9/10: Loss=0.9502, Val Acc=47.33%
+[Worker 2] Epoch 10/10: Loss=0.8411, Val Acc=49.00%
+[Worker 2] Training completed in 3.8s, Best Val Acc: 49.00%
+[Worker 3] Config 15 started
+[Worker 3] Params: {'config_id': 15, 'learning_rate': 0.001, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] CUDA is available. Using device: Tesla T4
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=1.9225, Val Acc=33.33%
+[Worker 3] Epoch 2/10: Loss=1.2733, Val Acc=46.67%
+[Worker 3] Epoch 3/10: Loss=0.8375, Val Acc=50.00%
+[Worker 3] Epoch 4/10: Loss=0.6444, Val Acc=53.00%
+[Worker 3] Epoch 5/10: Loss=0.4512, Val Acc=53.33%
+[Worker 3] Epoch 6/10: Loss=0.4165, Val Acc=52.33%
+[Worker 3] Epoch 7/10: Loss=0.4739, Val Acc=50.67%
+[Worker 3] Epoch 8/10: Loss=0.4879, Val Acc=52.33%
+[Worker 3] Epoch 9/10: Loss=0.3532, Val Acc=54.67%
+[Worker 3] Epoch 10/10: Loss=0.3172, Val Acc=55.67%
+[Worker 3] Training completed in 4.0s, Best Val Acc: 55.67%
+[Worker 0] Config 16 started
+[Worker 0] Params: {'config_id': 16, 'learning_rate': 0.003, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] CUDA is available. Using device: Tesla T4
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.2600, Val Acc=24.67%
+[Worker 0] Epoch 2/10: Loss=1.8436, Val Acc=32.67%
+[Worker 0] Epoch 3/10: Loss=1.4664, Val Acc=47.67%
+[Worker 0] Epoch 4/10: Loss=1.1455, Val Acc=50.00%
+[Worker 0] Epoch 5/10: Loss=0.9188, Val Acc=51.00%
+[Worker 0] Epoch 6/10: Loss=0.8025, Val Acc=52.67%
+[Worker 0] Epoch 7/10: Loss=0.6697, Val Acc=51.67%
+[Worker 0] Epoch 8/10: Loss=0.5684, Val Acc=52.33%
+[Worker 0] Epoch 9/10: Loss=0.4938, Val Acc=51.67%
+[Worker 0] Epoch 10/10: Loss=0.4295, Val Acc=55.33%
+[Worker 0] Training completed in 7.0s, Best Val Acc: 55.33%
+[Worker 1] Config 17 started
+[Worker 1] Params: {'config_id': 17, 'learning_rate': 0.003, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] CUDA is available. Using device: Tesla T4
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.0870, Val Acc=30.00%
+[Worker 1] Epoch 2/10: Loss=1.7045, Val Acc=35.33%
+[Worker 1] Epoch 3/10: Loss=1.5014, Val Acc=37.67%
+[Worker 1] Epoch 4/10: Loss=1.2997, Val Acc=42.00%
+[Worker 1] Epoch 5/10: Loss=1.3302, Val Acc=36.33%
+[Worker 1] Epoch 6/10: Loss=1.1405, Val Acc=38.67%
+[Worker 1] Epoch 7/10: Loss=1.0956, Val Acc=41.33%
+[Worker 1] Epoch 8/10: Loss=1.0901, Val Acc=39.00%
+[Worker 1] Epoch 9/10: Loss=1.0078, Val Acc=38.00%
+[Worker 1] Epoch 10/10: Loss=0.9146, Val Acc=42.67%
+[Worker 1] Training completed in 6.7s, Best Val Acc: 42.67%
+[Worker 2] Config 18 started
+[Worker 2] Params: {'config_id': 18, 'learning_rate': 0.003, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] CUDA is available. Using device: Tesla T4
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.3224, Val Acc=13.67%
+[Worker 2] Epoch 2/10: Loss=2.0022, Val Acc=32.33%
+[Worker 2] Epoch 3/10: Loss=1.6374, Val Acc=42.67%
+[Worker 2] Epoch 4/10: Loss=1.2777, Val Acc=43.33%
+[Worker 2] Epoch 5/10: Loss=0.9463, Val Acc=46.33%
+[Worker 2] Epoch 6/10: Loss=0.7134, Val Acc=48.00%
+[Worker 2] Epoch 7/10: Loss=0.5152, Val Acc=49.00%
+[Worker 2] Epoch 8/10: Loss=0.3726, Val Acc=47.67%
+[Worker 2] Epoch 9/10: Loss=0.2946, Val Acc=50.00%
+[Worker 2] Epoch 10/10: Loss=0.2163, Val Acc=48.00%
+[Worker 2] Training completed in 3.9s, Best Val Acc: 50.00%
+[Worker 3] Config 19 started
+[Worker 3] Params: {'config_id': 19, 'learning_rate': 0.003, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] CUDA is available. Using device: Tesla T4
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.0384, Val Acc=24.67%
+[Worker 3] Epoch 2/10: Loss=1.5717, Val Acc=33.67%
+[Worker 3] Epoch 3/10: Loss=1.2953, Val Acc=41.67%
+[Worker 3] Epoch 4/10: Loss=1.0503, Val Acc=39.67%
+[Worker 3] Epoch 5/10: Loss=0.9560, Val Acc=43.33%
+[Worker 3] Epoch 6/10: Loss=0.8730, Val Acc=52.00%
+[Worker 3] Epoch 7/10: Loss=0.8126, Val Acc=50.00%
+[Worker 3] Epoch 8/10: Loss=0.7504, Val Acc=46.67%
+[Worker 3] Epoch 9/10: Loss=0.7393, Val Acc=42.33%
+[Worker 3] Epoch 10/10: Loss=0.7321, Val Acc=44.67%
+[Worker 3] Training completed in 4.0s, Best Val Acc: 52.00%
+[Worker 0] Config 20 started
+[Worker 0] Params: {'config_id': 20, 'learning_rate': 0.005, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] CUDA is available. Using device: Tesla T4
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.1582, Val Acc=27.00%
+[Worker 0] Epoch 2/10: Loss=1.7189, Val Acc=32.67%
+[Worker 0] Epoch 3/10: Loss=1.4122, Val Acc=42.67%
+[Worker 0] Epoch 4/10: Loss=1.1992, Val Acc=50.67%
+[Worker 0] Epoch 5/10: Loss=0.9483, Val Acc=45.33%
+[Worker 0] Epoch 6/10: Loss=0.9865, Val Acc=45.33%
+[Worker 0] Epoch 7/10: Loss=0.9364, Val Acc=41.33%
+[Worker 0] Epoch 8/10: Loss=0.8277, Val Acc=51.33%
+[Worker 0] Epoch 9/10: Loss=0.7363, Val Acc=48.67%
+[Worker 0] Epoch 10/10: Loss=0.5776, Val Acc=51.67%
+[Worker 0] Training completed in 7.1s, Best Val Acc: 51.67%
+[Worker 1] Config 21 started
+[Worker 1] Params: {'config_id': 21, 'learning_rate': 0.005, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] CUDA is available. Using device: Tesla T4
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.1236, Val Acc=12.33%
+[Worker 1] Epoch 2/10: Loss=1.8472, Val Acc=29.67%
+[Worker 1] Epoch 3/10: Loss=1.7441, Val Acc=29.33%
+[Worker 1] Epoch 4/10: Loss=1.7322, Val Acc=26.33%
+[Worker 1] Epoch 5/10: Loss=1.6294, Val Acc=26.67%
+[Worker 1] Epoch 6/10: Loss=1.6189, Val Acc=30.33%
+[Worker 1] Epoch 7/10: Loss=1.5135, Val Acc=31.67%
+[Worker 1] Epoch 8/10: Loss=1.4183, Val Acc=33.67%
+[Worker 1] Epoch 9/10: Loss=1.3269, Val Acc=29.33%
+[Worker 1] Epoch 10/10: Loss=1.2594, Val Acc=24.67%
+[Worker 1] Training completed in 6.6s, Best Val Acc: 33.67%
+[Worker 2] Config 22 started
+[Worker 2] Params: {'config_id': 22, 'learning_rate': 0.005, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] CUDA is available. Using device: Tesla T4
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.2612, Val Acc=22.33%
+[Worker 2] Epoch 2/10: Loss=1.8039, Val Acc=41.33%
+[Worker 2] Epoch 3/10: Loss=1.3351, Val Acc=45.67%
+[Worker 2] Epoch 4/10: Loss=0.9610, Val Acc=48.67%
+[Worker 2] Epoch 5/10: Loss=0.6699, Val Acc=49.33%
+[Worker 2] Epoch 6/10: Loss=0.4731, Val Acc=51.00%
+[Worker 2] Epoch 7/10: Loss=0.3391, Val Acc=50.67%
+[Worker 2] Epoch 8/10: Loss=0.2914, Val Acc=50.67%
+[Worker 2] Epoch 9/10: Loss=0.2270, Val Acc=48.67%
+[Worker 2] Epoch 10/10: Loss=0.3912, Val Acc=13.33%
+[Worker 2] Training completed in 3.8s, Best Val Acc: 51.00%
+[Worker 3] Config 23 started
+[Worker 3] Params: {'config_id': 23, 'learning_rate': 0.005, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] CUDA is available. Using device: Tesla T4
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.1605, Val Acc=17.00%
+[Worker 3] Epoch 2/10: Loss=1.8027, Val Acc=23.33%
+[Worker 3] Epoch 3/10: Loss=1.5377, Val Acc=32.67%
+[Worker 3] Epoch 4/10: Loss=1.3411, Val Acc=42.00%
+[Worker 3] Epoch 5/10: Loss=1.2122, Val Acc=43.33%
+[Worker 3] Epoch 6/10: Loss=1.0779, Val Acc=40.33%
+[Worker 3] Epoch 7/10: Loss=1.0052, Val Acc=36.33%
+[Worker 3] Epoch 8/10: Loss=1.0668, Val Acc=34.00%
+[Worker 3] Epoch 9/10: Loss=0.9960, Val Acc=39.33%
+[Worker 3] Epoch 10/10: Loss=1.0011, Val Acc=35.33%
+[Worker 3] Training completed in 4.1s, Best Val Acc: 43.33%
+[Worker 0] Config 24 started
+[Worker 0] Params: {'config_id': 24, 'learning_rate': 0.01, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] CUDA is available. Using device: Tesla T4
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.1470, Val Acc=17.33%
+[Worker 0] Epoch 2/10: Loss=1.8695, Val Acc=31.33%
+[Worker 0] Epoch 3/10: Loss=1.7138, Val Acc=36.33%
+[Worker 0] Epoch 4/10: Loss=1.5275, Val Acc=36.00%
+[Worker 0] Epoch 5/10: Loss=1.3071, Val Acc=38.00%
+[Worker 0] Epoch 6/10: Loss=1.1578, Val Acc=39.67%
+[Worker 0] Epoch 7/10: Loss=1.2304, Val Acc=33.33%
+[Worker 0] Epoch 8/10: Loss=1.2020, Val Acc=40.00%
+[Worker 0] Epoch 9/10: Loss=0.9618, Val Acc=43.67%
+[Worker 0] Epoch 10/10: Loss=0.9378, Val Acc=39.33%
+[Worker 0] Training completed in 7.2s, Best Val Acc: 43.67%
+[Worker 1] Config 25 started
+[Worker 1] Params: {'config_id': 25, 'learning_rate': 0.01, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] CUDA is available. Using device: Tesla T4
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.3832, Val Acc=13.00%
+[Worker 1] Epoch 2/10: Loss=2.2612, Val Acc=8.67%
+[Worker 1] Epoch 3/10: Loss=2.3136, Val Acc=16.33%
+[Worker 1] Epoch 4/10: Loss=2.1258, Val Acc=13.33%
+[Worker 1] Epoch 5/10: Loss=2.0241, Val Acc=21.67%
+[Worker 1] Epoch 6/10: Loss=1.9800, Val Acc=19.67%
+[Worker 1] Epoch 7/10: Loss=1.9831, Val Acc=24.67%
+[Worker 1] Epoch 8/10: Loss=1.9599, Val Acc=18.67%
+[Worker 1] Epoch 9/10: Loss=1.9648, Val Acc=25.33%
+[Worker 1] Epoch 10/10: Loss=1.8961, Val Acc=21.67%
+[Worker 1] Training completed in 6.7s, Best Val Acc: 25.33%
+[Worker 2] Config 26 started
+[Worker 2] Params: {'config_id': 26, 'learning_rate': 0.01, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] CUDA is available. Using device: Tesla T4
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.2061, Val Acc=18.67%
+[Worker 2] Epoch 2/10: Loss=1.6969, Val Acc=34.33%
+[Worker 2] Epoch 3/10: Loss=1.3671, Val Acc=39.00%
+[Worker 2] Epoch 4/10: Loss=1.2444, Val Acc=38.67%
+[Worker 2] Epoch 5/10: Loss=1.0868, Val Acc=41.00%
+[Worker 2] Epoch 6/10: Loss=0.8351, Val Acc=48.00%
+[Worker 2] Epoch 7/10: Loss=0.7198, Val Acc=47.67%
+[Worker 2] Epoch 8/10: Loss=0.5226, Val Acc=50.67%
+[Worker 2] Epoch 9/10: Loss=0.4299, Val Acc=47.33%
+[Worker 2] Epoch 10/10: Loss=0.4330, Val Acc=47.67%
+[Worker 2] Training completed in 3.9s, Best Val Acc: 50.67%
+[Worker 3] Config 27 started
+[Worker 3] Params: {'config_id': 27, 'learning_rate': 0.01, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] CUDA is available. Using device: Tesla T4
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=2.4369, Val Acc=8.67%
+[Worker 3] Epoch 2/10: Loss=2.0345, Val Acc=12.67%
+[Worker 3] Epoch 3/10: Loss=1.9749, Val Acc=16.67%
+[Worker 3] Epoch 4/10: Loss=1.8771, Val Acc=23.00%
+[Worker 3] Epoch 5/10: Loss=1.7768, Val Acc=28.00%
+[Worker 3] Epoch 6/10: Loss=1.6686, Val Acc=25.00%
+[Worker 3] Epoch 7/10: Loss=1.6571, Val Acc=25.67%
+[Worker 3] Epoch 8/10: Loss=1.5280, Val Acc=30.67%
+[Worker 3] Epoch 9/10: Loss=1.4723, Val Acc=31.33%
+[Worker 3] Epoch 10/10: Loss=1.5132, Val Acc=29.67%
+[Worker 3] Training completed in 4.0s, Best Val Acc: 31.33%
+[Worker 0] Config 28 started
+[Worker 0] Params: {'config_id': 28, 'learning_rate': 0.03, 'batch_size': 32, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 0] CUDA is available. Using device: Tesla T4
+[Worker 0] Using cached dataset
+[Worker 0] Data prepared: 800 train samples
+[Worker 0] Fine-tuning: Full
+[Worker 0] Training started: 10 epochs
+[Worker 0] Epoch 1/10: Loss=2.3307, Val Acc=11.00%
+[Worker 0] Epoch 2/10: Loss=2.1844, Val Acc=24.33%
+[Worker 0] Epoch 3/10: Loss=2.1134, Val Acc=23.67%
+[Worker 0] Epoch 4/10: Loss=1.9638, Val Acc=29.33%
+[Worker 0] Epoch 5/10: Loss=1.8199, Val Acc=24.67%
+[Worker 0] Epoch 6/10: Loss=1.7843, Val Acc=30.33%
+[Worker 0] Epoch 7/10: Loss=1.8262, Val Acc=30.67%
+[Worker 0] Epoch 8/10: Loss=1.6559, Val Acc=31.33%
+[Worker 0] Epoch 9/10: Loss=1.5907, Val Acc=31.67%
+[Worker 0] Epoch 10/10: Loss=1.5638, Val Acc=33.00%
+[Worker 0] Training completed in 7.1s, Best Val Acc: 33.00%
+[Worker 1] Config 29 started
+[Worker 1] Params: {'config_id': 29, 'learning_rate': 0.03, 'batch_size': 32, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 1] CUDA is available. Using device: Tesla T4
+[Worker 1] Using cached dataset
+[Worker 1] Data prepared: 800 train samples
+[Worker 1] Fine-tuning: Full
+[Worker 1] Training started: 10 epochs
+[Worker 1] Epoch 1/10: Loss=2.9175, Val Acc=9.67%
+[Worker 1] Epoch 2/10: Loss=2.6650, Val Acc=10.33%
+[Worker 1] Epoch 3/10: Loss=2.3808, Val Acc=12.67%
+[Worker 1] Epoch 4/10: Loss=2.1988, Val Acc=20.00%
+[Worker 1] Epoch 5/10: Loss=2.1180, Val Acc=21.33%
+[Worker 1] Epoch 6/10: Loss=2.0557, Val Acc=22.00%
+[Worker 1] Epoch 7/10: Loss=2.0383, Val Acc=20.67%
+[Worker 1] Epoch 8/10: Loss=1.9967, Val Acc=19.67%
+[Worker 1] Epoch 9/10: Loss=1.9606, Val Acc=23.00%
+[Worker 1] Epoch 10/10: Loss=1.9328, Val Acc=19.00%
+[Worker 1] Training completed in 6.7s, Best Val Acc: 23.00%
+[Worker 2] Config 30 started
+[Worker 2] Params: {'config_id': 30, 'learning_rate': 0.03, 'batch_size': 64, 'optimizer': 'sgd', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 2] CUDA is available. Using device: Tesla T4
+[Worker 2] Using cached dataset
+[Worker 2] Data prepared: 800 train samples
+[Worker 2] Fine-tuning: Full
+[Worker 2] Training started: 10 epochs
+[Worker 2] Epoch 1/10: Loss=2.2015, Val Acc=11.67%
+[Worker 2] Epoch 2/10: Loss=1.9091, Val Acc=11.00%
+[Worker 2] Epoch 3/10: Loss=1.7105, Val Acc=19.67%
+[Worker 2] Epoch 4/10: Loss=1.5527, Val Acc=34.00%
+[Worker 2] Epoch 5/10: Loss=1.5270, Val Acc=32.67%
+[Worker 2] Epoch 6/10: Loss=1.2771, Val Acc=40.33%
+[Worker 2] Epoch 7/10: Loss=1.2273, Val Acc=36.67%
+[Worker 2] Epoch 8/10: Loss=1.1662, Val Acc=42.33%
+[Worker 2] Epoch 9/10: Loss=0.9869, Val Acc=43.67%
+[Worker 2] Epoch 10/10: Loss=0.9217, Val Acc=34.00%
+[Worker 2] Training completed in 3.8s, Best Val Acc: 43.67%
+[Worker 3] Config 31 started
+[Worker 3] Params: {'config_id': 31, 'learning_rate': 0.03, 'batch_size': 64, 'optimizer': 'adam', 'weight_decay': 0, 'fine_tuning': 'full'}
+[Worker 3] CUDA is available. Using device: Tesla T4
+[Worker 3] Using cached dataset
+[Worker 3] Data prepared: 800 train samples
+[Worker 3] Fine-tuning: Full
+[Worker 3] Training started: 10 epochs
+[Worker 3] Epoch 1/10: Loss=3.1249, Val Acc=9.00%
+[Worker 3] Epoch 2/10: Loss=2.5739, Val Acc=9.00%
+[Worker 3] Epoch 3/10: Loss=2.7411, Val Acc=10.00%
+[Worker 3] Epoch 4/10: Loss=2.4830, Val Acc=12.67%
+[Worker 3] Epoch 5/10: Loss=2.2541, Val Acc=12.67%
+[Worker 3] Epoch 6/10: Loss=2.2234, Val Acc=18.67%
+[Worker 3] Epoch 7/10: Loss=2.1104, Val Acc=19.00%
+[Worker 3] Epoch 8/10: Loss=2.1021, Val Acc=16.00%
+[Worker 3] Epoch 9/10: Loss=2.0738, Val Acc=23.33%
+[Worker 3] Epoch 10/10: Loss=1.9726, Val Acc=19.33%
+[Worker 3] Training completed in 4.0s, Best Val Acc: 23.33%
+
+================================================================================
+END OF REPORT
+================================================================================

@@ -55,23 +55,6 @@ def download_cifar10():
 
 
 def create_validation_split(X_train, y_train, val_ratio=0.2, seed=42):
-    """
-    Розділити train на train + validation
-
-    Стратегія: Stratified split (зберігає розподіл класів)
-
-    Args:
-        X_train: (50000, 32, 32, 3) - оригінальний train
-        y_train: (50000,) - мітки
-        val_ratio: float - частка для validation (0.2 = 20%)
-        seed: int - random seed для reproducibility
-
-    Returns:
-        X_train_new: (40000, 32, 32, 3) - новий train (80%)
-        y_train_new: (40000,)
-        X_val: (10000, 32, 32, 3) - validation (20%)
-        y_val: (10000,)
-    """
     print("\n" + "=" * 60)
     print("STEP 2: Creating Train/Validation split")
     print("=" * 60)
